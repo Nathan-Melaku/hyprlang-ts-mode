@@ -44,3 +44,14 @@ Follow these steps to install Hyprlang Tree-Sitter Mode:
      (use-package hyprlang-ts-mode
        :straight (:type git :host github :repo "Nathan-Melaku/hyprlang-ts-mode"))
    #+end_src
+
+** Configuration
+Indentation offset can be configured through a custom variable called =hyprlang-ts-mode-indent-offset=. By default
+it is set to 2 you can change it to the value that suits you.
+
+#+begin_src emacs-lisp
+  (use-package hyprlang-ts-mode
+    :straight (:type git :host github :repo "Nathan-Melaku/hyprlang-ts-mode")
+    :custom
+    (hyprlang-ts-mode-indent-offset 4)
+#+end_src
