@@ -1,6 +1,7 @@
 (require 'treesit)
 (defvar hyprlang-ts-font-lock-rules
-  '(;; Hyperlang font locking
+  '(;; Hyperlang font locking rules
+
     :language hyprlang
     :override t
     :feature comment
@@ -58,7 +59,8 @@
     ))
 
 (defun hyprlang-ts-setup ()
-  "Setup treesit for hyprlang"
+  "Setup treesit for hyprlang. This function is the core of the hyprlang-ts-mode.
+   it sets up font locking and indentation rules."
   (setq-local treesit-font-lock-settings
               (apply #'treesit-font-lock-rules
                      hyprlang-ts-font-lock-rules))
@@ -77,7 +79,7 @@
   (treesit-major-mode-setup))
 
 (define-derived-mode hyprlang-ts-mode prog-mode "Hyprlang"
-  "A mode for Hyprland configuration file"
+  "A mode for editing Hyprland configuration file"
   (when (treesit-ready-p 'hyprlang)
     (message "Hyprlang mode enabled")
     (hyprlang-ts-setup)))
