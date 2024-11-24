@@ -1,3 +1,16 @@
+;;; hyprlang-ts-mode.el --- tree-sitter support for Hyprlang  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2024
+
+;; Author     : Nathan Melaku <cy6ass@gmail.com>
+;; Maintainer : Nathan Melaku <cy6ass@gmail.com>
+;; Created    : November 2024
+;; Keywords   : hyprland hyprlang languages tree-sitter
+
+;;; Commentary:
+;;
+
+;;; Code:
 (require 'treesit)
 (defvar hyprlang-ts-font-lock-rules
   '(;; Hyperlang font locking rules
@@ -80,8 +93,15 @@
 
 (define-derived-mode hyprlang-ts-mode prog-mode "Hyprlang"
   "A mode for editing Hyprland configuration file"
-  (when (treesit-ready-p 'hyprlang)
-    (message "Hyprlang mode enabled")
-    (hyprlang-ts-setup)))
+
+  (unless (treesit-ready-p 'hyprlang)
+    (error "Tree-sitter for hyprlang isn't available"))
+
+  (hyprlang-ts-setup))
+
+(if (treesit-ready-p 'hyprlang)
+    (add-to-list 'auto-mode-alist '("/hypr/.*\\.conf\\'" . hyprlang-ts-mode)))
 
 (provide 'hyprlang-ts-mode)
+
+;;; hyprlang-ts-mode.el ends here
