@@ -1,4 +1,4 @@
-#+TITLE: Hyprlang Tree-sitter Mode for emacs
+#+TITLE: Emacs Tree-sitter Mode for Hyprlang
 #+AUTHOR: Nathan Melaku
 #+EMAIL: cy6ass@gmail.com
 #+DATE: <2024-11-24 Sun>
@@ -7,14 +7,13 @@
 
 [[./screenshot.png]]
 
-* Hyprlang Tree-Sitter Mode for Emacs
 Hyprlang Tree-Sitter Mode is a major mode designed to provide enhanced editing support for Hyprland configuration files in Emacs. By leveraging Tree-Sitter, this mode offers robust syntax highlighting and indentation features, with plans to expand its capabilities in the future.
 
 ** Features
 Currently, this mode provides the following features:
 
-- **Syntax Highlighting**
-- **Proper Indentation Support**
+- Syntax Highlighting
+- Proper Indentation Support
 
 More features are planned for future releases.
 
@@ -27,7 +26,7 @@ To use Hyprlang Tree-Sitter Mode, you’ll need the following:
 ** Installation
 Follow these steps to install Hyprlang Tree-Sitter Mode:
 
-1. **Get the hyprlang tree-sitter grammer**:
+1. Get the hyprlang tree-sitter grammer:
    you can do this by adding the tree-sitter grammer url to the treesit-language-source-alist alist
 
    #+begin_src emacs-lisp
@@ -38,7 +37,7 @@ Follow these steps to install Hyprlang Tree-Sitter Mode:
    Then =M-x= =treesit-install-language-grammar= =RET=. Then select hyperlang from the list and press =RET=. This
    will install the hyperlang tree-sitter grammer.
 
-2. **Install the hyprlang-ts-mode**:
+2. Install the hyprlang-ts-mode:
    you can do this using straight as follows
 
    #+begin_src emacs-lisp
