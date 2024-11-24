@@ -12,6 +12,14 @@
 
 ;;; Code:
 (require 'treesit)
+
+(defcustom hyprlang-ts-mode-indent-offset 2
+  "Number of spaces for each indentation step in `hyprlang-ts-mode'"
+  :version "29.4"
+  :type 'integer
+  :safe 'integerp
+  :group 'hyprlang)
+
 (defvar hyprlang-ts-font-lock-rules
   '(;; Hyperlang font locking rules
 
@@ -71,6 +79,15 @@
     ((mod) @font-lock-variable-use-face)
     ))
 
+(defvar hyprlang-ts-mode--indent-rules
+  ;; Hyprlang indentation rules
+  `((hyprlang
+     ((parent-is "section") parent hyprlang-ts-mode-indent-offset)
+     ((node-is "section") parent 0)
+     ((node-is "comment") parent 0)
+     ((node-is ,(regexp-opt '("assignment" "keyword" "exec" "declaration"))) prev-sibling 0)
+     (no-node parent 0))))
+
 (defvar hyprlang-ts-mode--syntax-table
   (let ((syntax-table (make-syntax-table)))
     (modify-syntax-entry ?# "<" syntax-table)
@@ -94,13 +111,9 @@
               '((comment)
                 (section assignment keyword exec declaration)
                 (variable string string_literal number boolean mod)))
-  (setq-local treesit-simple-indent-rules
-              `((hyprlang
-                 ((parent-is "section") parent 4)
-                 ((node-is "section") parent 0)
-                 ((node-is "comment") parent 0)
-                 ((node-is ,(regexp-opt '("assignment" "keyword" "exec" "declaration"))) prev-sibling 0)
-                 (no-node parent 0))))
+
+  ;; set indentation rules
+  (setq-local treesit-simple-indent-rules hyprlang-ts-mode--indent-rules)
   (treesit-major-mode-setup))
 
 (define-derived-mode hyprlang-ts-mode prog-mode "Hyprlang"
