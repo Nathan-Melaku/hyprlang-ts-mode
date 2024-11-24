@@ -43,5 +43,5 @@ Follow these steps to install Hyprlang Tree-Sitter Mode:
    #+begin_src emacs-lisp
      (use-package hyprlang-ts-mode
        :straight (:type git :host github :repo "Nathan-Melaku/hyprlang-ts-mode")
-       :mode ("/hypr/.*\\.conf\\'"  hyprlang-tree-sitter-mode))
+       :mode ("/hypr/.*\\.conf\\'" . hyprlang-ts-mode))
    #+end_src
