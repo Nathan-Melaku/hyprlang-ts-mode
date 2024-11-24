@@ -71,9 +71,21 @@
     ((mod) @font-lock-variable-use-face)
     ))
 
+(defvar hyprlang-ts-mode--syntax-table
+  (let ((syntax-table (make-syntax-table)))
+    (modify-syntax-entry ?# "<" syntax-table)
+    (modify-syntax-entry ?\n ">#" syntax-table)
+    syntax-table)
+  "Syntax table for `hyprlang-ts-mode'.")
+
 (defun hyprlang-ts-setup ()
   "Setup treesit for hyprlang. This function is the core of the hyprlang-ts-mode.
    it sets up font locking and indentation rules."
+  ;; comment starts with # and it doesn't need and end symbol
+  (setq-local comment-start "#")
+  (setq-local comment-end "")
+
+  ;; set font lock
   (setq-local treesit-font-lock-settings
               (apply #'treesit-font-lock-rules
                      hyprlang-ts-font-lock-rules))
@@ -93,10 +105,10 @@
 
 (define-derived-mode hyprlang-ts-mode prog-mode "Hyprlang"
   "A mode for editing Hyprland configuration file"
-
+  :group 'hyprlang
+  :syntax-table hyprlang-ts-mode--syntax-table
   (unless (treesit-ready-p 'hyprlang)
     (error "Tree-sitter for hyprlang isn't available"))
-
   (hyprlang-ts-setup))
 
 (if (treesit-ready-p 'hyprlang)
