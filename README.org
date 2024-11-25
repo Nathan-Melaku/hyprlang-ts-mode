@@ -4,10 +4,18 @@
 #+DATE: <2024-11-24 Sun>
 #+DESCRIPTION: A major mode for editing Hyprland configuration files.
 #+KEYWORDS: Emacs, Tree-sitter, Hyprland, Configuration
+#+OPTIONS:   H:4 num:nil toc:2 p:t
 
 [[./screenshot.png]]
 
 Hyprlang Tree-Sitter Mode is a major mode designed to provide enhanced editing support for Hyprland configuration files in Emacs. By leveraging Tree-Sitter, this mode offers robust syntax highlighting and indentation features, with plans to expand its capabilities in the future.
+
+#+begin_quote
+[!NOTE]
+
+This package is based on Emacs 29's built-in =treesit=. And it requires a tree-sitter-hyprlang grammer.
+The package has been tested with version 3.0.0 of the tree-sitter-hyprlang grammer.
+#+end_quote
 
 ** Features
 Currently, this mode provides the following features:
