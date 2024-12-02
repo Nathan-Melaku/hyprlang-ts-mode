@@ -46,7 +46,13 @@
     :language hyprlang
     :override t
     :feature exec
-    ((exec) @font-lock-keyword-face)
+    ((exec "exec" @font-lock-keyword-face "=" @font-lock-operator-face)
+     (exec "exec-once" @font-lock-keyword-face "=" @font-lock-operator-face))
+
+    :language hyprlang
+    :override t
+    :feature source
+    ((source "source" @font-lock-keyword-face "=" @font-lock-operator-face))
 
     :language hyprlang
     :override t
@@ -76,8 +82,7 @@
     :language hyprlang
     :override t
     :feature mod
-    ((mod) @font-lock-variable-use-face)
-    ))
+    ((mod) @font-lock-variable-use-face)))
 
 (defvar hyprlang-ts-mode--indent-rules
   ;; Hyprlang indentation rules
@@ -109,7 +114,7 @@
   (setq-local font-lock-defaults nil)
   (setq-local treesit-font-lock-feature-list
               '((comment)
-                (section assignment keyword exec declaration)
+                (section assignment keyword exec source declaration)
                 (variable string string_literal number boolean mod)))
 
   ;; set indentation rules
