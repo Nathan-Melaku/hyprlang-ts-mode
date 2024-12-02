@@ -46,7 +46,8 @@
     :language hyprlang
     :override t
     :feature exec
-    ((exec) @font-lock-keyword-face)
+    ((exec "exec" @font-lock-keyword-face "=" @font-lock-operator-face)
+     (exec "exec-once" @font-lock-keyword-face "=" @font-lock-operator-face))
 
     :language hyprlang
     :override t
