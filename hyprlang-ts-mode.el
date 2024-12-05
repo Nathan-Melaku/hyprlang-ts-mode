@@ -87,6 +87,7 @@
 (defvar hyprlang-ts-mode--indent-rules
   ;; Hyprlang indentation rules
   `((hyprlang
+     ((node-is "}") parent 0)
      ((parent-is "section") parent hyprlang-ts-mode-indent-offset)
      ((node-is "section") parent 0)
      ((node-is "comment") parent 0)
