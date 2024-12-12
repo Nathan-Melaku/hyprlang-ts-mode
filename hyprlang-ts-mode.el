@@ -1,4 +1,4 @@
-;;; hyprlang-ts-mode.el --- tree-sitter support for Hyprlang  -*- lexical-binding: t; -*-
+;;; hyprlang-ts-mode.el --- Major mode for editing hyprland configuration files -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2024
 
@@ -6,15 +6,20 @@
 ;; Maintainer : Nathan Melaku <cy6ass@gmail.com>
 ;; Created    : November 2024
 ;; Keywords   : hyprland hyprlang languages tree-sitter
+;; Version    : 0.0.1
+;; URL        : https://github.com/Nathan-Melaku/hyprlang-ts-mode
+;; Package-Requires: ((emacs "29.1"))
 
 ;;; Commentary:
-;;
+;; Major mode for editing hyprland configuration files, powered by treesitter. It provides syntax highlighting,
+;; indentation. It's tree-sitter grammer is located at `https://github.com/tree-sitter-grammars/tree-sitter-hyprlang'
 
 ;;; Code:
+
 (require 'treesit)
 
 (defcustom hyprlang-ts-mode-indent-offset 2
-  "Number of spaces for each indentation step in `hyprlang-ts-mode'"
+  "Number of spaces for each indentation step in `hyprlang-ts-mode'."
   :version "29.4"
   :type 'integer
   :safe 'integerp
@@ -102,8 +107,9 @@
   "Syntax table for `hyprlang-ts-mode'.")
 
 (defun hyprlang-ts-setup ()
-  "Setup treesit for hyprlang. This function is the core of the hyprlang-ts-mode.
-   it sets up font locking and indentation rules."
+  "Setup treesit for hyprlang.
+This function is the core of the`hyprlang-ts-mode'.
+it sets up font locking and indentation rules."
   ;; comment starts with # and it doesn't need and end symbol
   (setq-local comment-start "#")
   (setq-local comment-end "")
