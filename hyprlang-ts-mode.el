@@ -11,8 +11,8 @@
 ;; Package-Requires: ((emacs "29.1"))
 
 ;;; Commentary:
-;; Major mode for editing hyprland configuration files, powered by treesitter. It provides syntax highlighting,
-;; indentation. It's tree-sitter grammer is located at `https://github.com/tree-sitter-grammars/tree-sitter-hyprlang'
+;; Major mode for editing hyprland configuration files, powered by treesitter.  It provides syntax highlighting,
+;; indentation.  It's tree-sitter grammer is located at `https://github.com/tree-sitter-grammars/tree-sitter-hyprlang'
 
 ;;; Code:
 
@@ -129,7 +129,7 @@ it sets up font locking and indentation rules."
   (treesit-major-mode-setup))
 
 (define-derived-mode hyprlang-ts-mode prog-mode "Hyprlang"
-  "A mode for editing Hyprland configuration file"
+  "A mode for editing Hyprland configuration file."
   :group 'hyprlang
   :syntax-table hyprlang-ts-mode--syntax-table
   (unless (treesit-ready-p 'hyprlang)
