@@ -155,7 +155,12 @@ it sets up font locking and indentation rules."
   :syntax-table hyprlang-ts-mode--syntax-table
 
   (unless (treesit-ready-p 'hyprlang)
-    (error "Tree-sitter for hyprlang isn't available"))
+    ;; add the language grammer
+    (if (boundp 'treesit-language-source-alist)
+        (add-to-list 'treesit-language-source-alist
+                     '(hyprlang "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang" "master")))
+    (error "Tree-sitter for hyprlang isn't available.
+You can install it with `treesit-install-language-grammar'"))
 
   (hyprlang-ts-setup))
 
