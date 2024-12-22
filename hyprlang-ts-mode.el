@@ -114,6 +114,13 @@
     syntax-table)
   "Syntax table for `hyprlang-ts-mode'.")
 
+(defun hyprlang-ts-mode--defun-name (node)
+  "Return the defun name of NODE.
+Return nil if there is no name or if node is not a defun node."
+  (if (string-equal-ignore-case (treesit-node-type node) "section")
+      (treesit-node-text (treesit-node-child node 0) t)
+    nil))
+
 (defun hyprlang-ts-setup ()
   "Setup treesit for hyprlang.
 This function is the core of the`hyprlang-ts-mode'.
@@ -122,10 +129,14 @@ it sets up font locking and indentation rules."
   ;; comment starts with # and it doesn't need and end symbol
   (setq-local comment-start "#")
   (setq-local comment-end "")
+  (setq-local treesit-defun-name-function #'hyprlang-ts-mode--defun-name)
 
   ;; Navigation
   (setq-local treesit-defun-type-regexp "section")
 
+  ;; Imenu
+  (setq-local treesit-simple-imenu-settings
+              '(("Section" "\\`section\\'" nil nil)))
 
   ;; set font lock
   (setq-local treesit-font-lock-settings hyprlang-ts-mode--font-lock-rules)

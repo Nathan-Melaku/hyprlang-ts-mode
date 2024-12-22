@@ -22,6 +22,8 @@ Currently, this mode provides the following features:
 
 - Syntax Highlighting
 - Proper Indentation Support
+- Navigation
+- Imenu
 
 More features are planned for future releases.
 
@@ -63,3 +65,6 @@ it is set to 2 you can change it to the value that suits you.
     :custom
     (hyprlang-ts-mode-indent-offset 4)
 #+end_src
+
+** Usage
+=C-M-a= and =C-M-e= will navigate to the begining and end of sections. Imenu will show a list of sections available in the buffer.
