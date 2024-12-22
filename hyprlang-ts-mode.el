@@ -123,6 +123,10 @@ it sets up font locking and indentation rules."
   (setq-local comment-start "#")
   (setq-local comment-end "")
 
+  ;; Navigation
+  (setq-local treesit-defun-type-regexp "section")
+
+
   ;; set font lock
   (setq-local treesit-font-lock-settings hyprlang-ts-mode--font-lock-rules)
   (setq-local treesit-font-lock-feature-list
