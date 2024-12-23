@@ -1,5 +1,5 @@
 (package "hyprlang-ts-mode"
-         "0.0.1"
+         "0.1.0"
          "Major mode for editing hyprland configuration files")
 
 (website-url "https://github.com/Nathan-Melaku/hyprlang-ts-mode")

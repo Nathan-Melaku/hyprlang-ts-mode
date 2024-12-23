@@ -6,7 +6,7 @@
 ;; Maintainer : Nathan Melaku <nathan@natefu.xyz>
 ;; Created    : November 2024
 ;; Keywords   : hyprland hyprlang languages tree-sitter
-;; Version    : 0.0.1
+;; Version    : 0.1.0
 ;; URL        : https://github.com/Nathan-Melaku/hyprlang-ts-mode
 ;; Package-Requires: ((emacs "29.1"))
 
