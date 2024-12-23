@@ -1,0 +1,31 @@
+Code:
+  (lambda ()
+    (require 'hyprlang-ts-mode)
+    (setq indent-tabs-mode nil)
+    (setq hyprlang-ts-mode-indent-offset 2)
+    (setq tab-width 2)
+    (hyprlang-ts-mode)
+    (indent-region (point-min)(point-max)))
+
+Name: Basic
+
+=-=
+# Monitor setup
+monitor=DP-1,1920x1080@60,0x0,0.75,transform,1
+monitor=HDMI-A-1,3840x2160@60,1440x0,1
+=-=-=
+
+Name: Section
+=-=
+input {
+  kb_layout = us
+  follow_mouse = 1
+  repeat_rate = 50
+
+  touchpad {
+    natural_scroll = no
+  }
+
+  sensitivity = 0
+}
+=-=-=

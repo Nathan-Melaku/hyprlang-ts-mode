@@ -1,0 +1,142 @@
+Code:
+  (lambda ()
+    (require 'hyprlang-ts-mode)
+    (hyprlang-ts-mode)
+    (customize-set-variable 'treesit-font-lock-level 4)
+    (let ((face (symbol-name (face-at-point))))
+        (erase-buffer)
+        (insert face)))
+Point-Char: |
+
+Name: comment
+No-After-Newline: t
+=-=
+# Comm|ent Here
+=-=
+font-lock-comment-face
+=-=-=
+
+Name: source
+No-After-Newline: t
+=-=
+sour|ce = ~/.config/hypr/mocha.conf
+=-=
+font-lock-keyword-face
+=-=-=
+
+Name: exec
+No-After-Newline: t
+=-=
+exe|c-once = blueman-applet & nm-applet
+=-=
+font-lock-keyword-face
+=-=-=
+
+Name: keyword
+No-After-Newline: t
+=-=
+bi|nd = SUPER, E, exec, [workspace 2 silent; float; move 0 0] kitty
+=-=
+font-lock-keyword-face
+=-=-=
+
+Name: assignment
+No-After-Newline: t
+=-=
+input {
+  kb|_layout = us
+}
+=-=
+font-lock-property-use-face
+=-=-=
+
+Name: section
+No-After-Newline: t
+=-=
+i|nput {
+  kb_layout = us
+}
+=-=
+font-lock-type-face
+=-=-=
+
+Name: variable
+No-After-Newline: t
+=-=
+$ter|minal = kitty
+=-=
+font-lock-variable-name-face
+=-=-=
+
+Name: mod
+No-After-Newline: t
+=-=
+bind = S|UPER, E, exec, [workspace 2 silent; float; move 0 0] kitty
+=-=
+font-lock-constant-face
+=-=-=
+
+Name: builtin
+No-After-Newline: t
+=-=
+general {
+  col.active_border = rg|ba(ddc080ee) rgba(595959aa) 45deg
+}
+=-=
+font-lock-builtin-face
+=-=-=
+
+Name: builtin-2
+No-After-Newline: t
+=-=
+general {
+  col.active_border = rg|b(ddc080) rgb(595959) 45deg
+}
+=-=
+font-lock-builtin-face
+=-=-=
+
+Name: number
+No-After-Newline: t
+=-=
+general {
+  col.active_border = rgb(d|dc080) rgb(595959) 45deg
+}
+=-=
+font-lock-number-face
+=-=-=
+
+Name: delimit
+No-After-Newline: t
+=-=
+monitor=DP-1|,1920x1080@60,0x0,0.75,transform,1
+=-=
+font-lock-delimiter-face
+=-=-=
+
+Name: bracket
+No-After-Newline: t
+=-=
+general |{
+  col.active_border = rg|b(ddc080) rgb(595959) 45deg
+}
+=-=
+font-lock-bracket-face
+=-=-=
+
+Name: operator
+No-After-Newline: t
+=-=
+$terminal |= kitty
+=-=
+font-lock-operator-face
+=-=-=
+
+Name: string
+No-After-Newline: t
+=-=
+$terminal = kit|ty
+=-=
+font-lock-string-face
+=-=-=
+
