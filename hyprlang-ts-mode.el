@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2024
 
-;; Author     : Nathan Melaku <cy6ass@gmail.com>
-;; Maintainer : Nathan Melaku <cy6ass@gmail.com>
+;; Author     : Nathan Melaku <nathan@natefu.xyz>
+;; Maintainer : Nathan Melaku <nathan@natefu.xyz>
 ;; Created    : November 2024
 ;; Keywords   : hyprland hyprlang languages tree-sitter
 ;; Version    : 0.0.1
@@ -12,7 +12,8 @@
 
 ;;; Commentary:
 ;; Major mode for editing hyprland configuration files, powered by treesitter.  It provides syntax highlighting,
-;; indentation.  It's tree-sitter grammer is located at `https://github.com/tree-sitter-grammars/tree-sitter-hyprlang'
+;; indentation, Navigation, and Imenu.  It's tree-sitter grammer is located at
+;; `https://github.com/tree-sitter-grammars/tree-sitter-hyprlang'
 
 ;;; Code:
 
@@ -156,7 +157,7 @@ it sets up font locking and indentation rules."
 
   (unless (treesit-ready-p 'hyprlang)
     ;; add the language grammer
-    (if (boundp 'treesit-language-source-alist)
+    (if (and (treesit-available-p) (boundp 'treesit-language-source-alist))
         (add-to-list 'treesit-language-source-alist
                      '(hyprlang "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang" "master")))
     (error "Tree-sitter for hyprlang isn't available.
