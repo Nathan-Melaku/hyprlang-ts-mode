@@ -2,16 +2,18 @@
 
 ;; Copyright (C) 2024
 
-;; Author     : Nathan Melaku <nathan@natefu.xyz>
-;; Maintainer : Nathan Melaku <nathan@natefu.xyz>
-;; Created    : November 2024
-;; Keywords   : hyprland hyprlang languages tree-sitter
-;; Version    : 0.1.0
-;; URL        : https://github.com/Nathan-Melaku/hyprlang-ts-mode
-;; Package-Requires: ((emacs "29.1"))
+;; Author                  : Nathan Melaku <nathan@natefu.xyz>
+;; Maintainer              : Nathan Melaku <nathan@natefu.xyz>
+;; Created                 : November 2024
+;; Keywords                : hyprland hyprlang languages tree-sitter
+;; Version                 : 0.1.0
+;; URL                     : https://github.com/Nathan-Melaku/hyprlang-ts-mode
+;; Package-Requires        : ((emacs "29.1"))
+;; SPDX-License-Identifier : MIT
 
 ;;; Commentary:
-;; Major mode for editing hyprland configuration files, powered by treesitter.  It provides syntax highlighting,
+;; Major mode for editing hyprland configuration files, powered by treesitter.
+;; It provides syntax highlighting,
 ;; indentation, Navigation, and Imenu.  It's tree-sitter grammer is located at
 ;; `https://github.com/tree-sitter-grammars/tree-sitter-hyprlang'
 
