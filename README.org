@@ -6,16 +6,21 @@
 #+KEYWORDS: Emacs, Tree-sitter, Hyprland, Configuration
 #+OPTIONS:   H:4 num:nil toc:2 p:t
 
-#+CAPTION: hyprland config with imenu list
-[[./screenshot-imenu.png]]
+[[https://melpa.org/#/hyprlang-ts-mode][file:https://melpa.org/packages/hyprlang-ts-mode-badge.svg]]
 
-Hyprlang Tree-Sitter Mode is a major mode designed to provide enhanced editing support for Hyprland configuration files in Emacs. By leveraging Tree-Sitter, this mode offers robust syntax highlighting and indentation features, with plans to expand its capabilities in the future.
+[[./screenshot.png]]
+
+Hyprlang Tree-Sitter Mode is a major mode designed to provide enhanced
+editing support for Hyprland configuration files in Emacs. By
+leveraging Tree-Sitter, this mode offers syntax highlighting
+and indentation, navigation, and imenu support.
 
 #+begin_quote
 [!NOTE]
 
-This package is based on Emacs 29's built-in =treesit=. And it requires a tree-sitter-hyprlang grammer.
-The package has been tested with version 3.0.0 of the tree-sitter-hyprlang grammer.
+This package is based on Emacs 29's built-in =treesit=. And it
+requires a tree-sitter-hyprlang grammer.  The package has been tested
+with version 3.0.0 of the tree-sitter-hyprlang grammer.
 #+end_quote
 
 ** Features
@@ -26,46 +31,45 @@ Currently, this mode provides the following features:
 - Navigation
 - Imenu
 
-More features are planned for future releases.
-
 ** Requirements
 To use Hyprlang Tree-Sitter Mode, you’ll need the following:
 
 - Emacs 29+ compiled with tree-sitter support
-- A compatible Tree-Sitter grammar for Hyprland configuration files. You can find one [[https://github.com/tree-sitter-grammars/tree-sitter-hyprlang][Hyprlang tree-sitter grammer]].
+- A compatible Tree-Sitter grammar for Hyprland configuration
+  files. You can find the grammer [[https://github.com/tree-sitter-grammars/tree-sitter-hyprlang][HERE]]. For more info look at the
+  installation section below.
 
 ** Installation
 Follow these steps to install Hyprlang Tree-Sitter Mode:
 
-1. Get the hyprlang tree-sitter grammer:
-   you can do this by adding the tree-sitter grammer url to the treesit-language-source-alist alist
+1. Get the hyprlang tree-sitter grammer: you can do this by adding the
+   tree-sitter grammer url to the =treesit-language-source-alist= alist
 
    #+begin_src emacs-lisp
      (add-to-list 'treesit-language-source-alist
              '(hyprlang "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang"))
    #+end_src
 
-   Then =M-x= =treesit-install-language-grammar= =RET=. Then select hyperlang from the list and press =RET=. This
-   will install the hyperlang tree-sitter grammer.
+   Then =M-x= =treesit-install-language-grammar= =RET=. Then select
+   hyperlang from the list and press =RET=. This will install the
+   hyperlang tree-sitter grammer.
 
 2. Install the hyprlang-ts-mode:
-   you can do this using straight as follows
-
-   #+begin_src emacs-lisp
-     (use-package hyprlang-ts-mode
-       :straight (:type git :host github :repo "Nathan-Melaku/hyprlang-ts-mode"))
-   #+end_src
+   =hyperlang-ts-mode= is available from [[https://melpa.org/#/hyprlang-ts-mode][MELPA]]. You can install it directly via
+   =M-x package-install RET hyprlang-ts-mode RET=, after [[https://melpa.org/#/getting-started][Enabling Melpa]].
 
 ** Configuration
-Indentation offset can be configured through a custom variable called =hyprlang-ts-mode-indent-offset=. By default
-it is set to 2 you can change it to the value that suits you.
+Indentation offset can be configured through a custom variable called
+=hyprlang-ts-mode-indent-offset=. By default it is set to 2 you can
+change it to the value that suits you.
 
 #+begin_src emacs-lisp
   (use-package hyprlang-ts-mode
-    :straight (:type git :host github :repo "Nathan-Melaku/hyprlang-ts-mode")
+    :ensure t
     :custom
     (hyprlang-ts-mode-indent-offset 4)
 #+end_src
 
 ** Usage
-=C-M-a= and =C-M-e= will navigate to the begining and end of sections. Imenu will show a list of sections available in the buffer.
+=C-M-a= and =C-M-e= will navigate to the begining and end of
+sections. Imenu will show a list of sections available in the buffer.
