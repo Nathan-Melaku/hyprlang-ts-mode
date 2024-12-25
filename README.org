@@ -8,7 +8,7 @@
 
 [[https://melpa.org/#/hyprlang-ts-mode][file:https://melpa.org/packages/hyprlang-ts-mode-badge.svg]]
 
-[[./screenshot.png]]
+[[./screenshot-imenu.png]]
 
 Hyprlang Tree-Sitter Mode is a major mode designed to provide enhanced
 editing support for Hyprland configuration files in Emacs. By
