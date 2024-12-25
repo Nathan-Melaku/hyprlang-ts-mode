@@ -6,7 +6,7 @@
 #+KEYWORDS: Emacs, Tree-sitter, Hyprland, Configuration
 #+OPTIONS:   H:4 num:nil toc:2 p:t
 
-[[https://melpa.org/#/hyprlang-ts-mode][file:https://melpa.org/packages/hyprlang-ts-mode-badge.svg]]
+[[https://melpa.org/#/hyprlang-ts-mode][file:https://melpa.org/packages/hyprlang-ts-mode-badge.svg]] [[https://stable.melpa.org/#/hyprlang-ts-mode][file:https://stable.melpa.org/packages/hyprlang-ts-mode-badge.svg]]
 
 [[./screenshot-imenu.png]]
 
